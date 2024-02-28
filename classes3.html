@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Function as Class</h2>
+
+<script> 
+
+function Person(firstName, lastName, age) {
+    this.firstName = firstName || "unknown"; // Default value if firstName is not provided
+    this.lastName = lastName || "unknown";   // Default value if lastName is not provided
+    this.age = age || 25;                    // Default value if age is not provided
+
+    // Method
+    this.getFullName = function () {
+        return this.firstName + " " + this.lastName;
+    }
+};
+
+// Create object 1 with firstName "James", lastName "Bond", and age 50
+var person1 = new Person("James", "Bond", 50);
+alert(person1.getFullName()); // Should alert "James Bond"
+
+// Create object 2 with firstName "Wonder", lastName "Woman"
+var person2 = new Person("Wonder", "Woman");
+alert(person2.getFullName()); // Should alert "Wonder Woman"
+
+</script>
+
+</body>
+</html>
